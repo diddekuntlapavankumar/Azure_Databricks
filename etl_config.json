@@ -7,6 +7,18 @@
     "secret_scope": "adls-scope",
     "secret_key": "client-secret"
   },
+  "oauth_config": {
+    "auth_type": "OAuth",
+    "provider_type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+    "endpoint_template": "https://login.microsoftonline.com/{tenant_id}/oauth2/token",
+    "spark_properties": {
+      "fs.azure.account.auth.type.{base}": "{auth_type}",
+      "fs.azure.account.oauth.provider.type.{base}": "{provider_type}",
+      "fs.azure.account.oauth2.client.id.{base}": "{client_id}",
+      "fs.azure.account.oauth2.client.secret.{base}": "{client_secret}",
+      "fs.azure.account.oauth2.client.endpoint.{base}": "{endpoint}"
+    }
+  },
   "file_paths": {
     "csv": "ainput1/Employee2.csv",
     "json": "ainput1/employees_single.json",
