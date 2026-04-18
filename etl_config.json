@@ -1,0 +1,20 @@
+{
+  "adls_connection": {
+    "storage_account": "bronzeadlsstorage",
+    "container": "ainput",
+    "client_id": "fe8fdf73-1c07-4728-8f16-e6bb1fb51951",
+    "tenant_id": "1c00043c-77d0-4125-ab5a-a486bcc0d7bf",
+    "secret_scope": "adls-scope",
+    "secret_key": "client-secret"
+  },
+  "file_paths": {
+    "csv": "ainput1/Employee2.csv",
+    "json": "ainput1/employees_single.json",
+    "parquet": "ainput1/yellow_tripdata_2023-01.parquet"
+  },
+  "output": {
+    "path": "output",
+    "format": "parquet",
+    "mode": "overwrite"
+  }
+}
