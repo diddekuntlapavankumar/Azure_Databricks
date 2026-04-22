@@ -72,7 +72,15 @@ class ADLSManager:
         base     = f"{self.storage_account}.dfs.core.windows.net"
         endpoint = self.oauth_cfg["endpoint_template"].format(tenant_id=self.tenant_id)
 
-        placeholders = {
+        placeholders = {            "base": base,
+            "auth_type": self.oauth_cfg["auth_type"],
+            "provider_type": self.oauth_cfg["provider_type"],
+            "client_id": self.client_id,
+            "client_secret": client_secret,
+            "endpoint": endpoint,
+        }
+
+        {
             "base": base,
             "auth_type": self.oauth_cfg["auth_type"],
             "provider_type": self.oauth_cfg["provider_type"],

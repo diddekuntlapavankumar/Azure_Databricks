@@ -65,7 +65,8 @@ class PipelineConfig:
     source_file_format: str = "csv"
 
     # Column mapping: raw CSV header → snake_case
-    column_mapping: Dict[str, str] = field(default_factory=lambda: {
+    column_mapping: Dict[str, str] = field(default_factory=lambda: 
+    {
         "Name": "name",
         "Age": "age",
         "Gender": "gender",
