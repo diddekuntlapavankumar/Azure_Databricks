@@ -21,6 +21,7 @@
   },
   "file_paths": {
     "csv": "ainput1/Employee2.csv",
+    "csv":"ainput1/healthcare_dataset.csv",
     "json": "ainput1/employees_single.json",
     "parquet": "ainput1/yellow_tripdata_2023-01.parquet"
   },
