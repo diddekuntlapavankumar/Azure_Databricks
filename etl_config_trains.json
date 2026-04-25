@@ -1,0 +1,44 @@
+{
+  "adls_connection":
+  {
+    "storage_account": "bronzeadlsstorage",
+    "container": "ainput",
+    "client_id": "fe8fdf73-1c07-4728-8f16-e6bb1fb51951",
+    "tenant_id": "1c00043c-77d0-4125-ab5a-a486bcc0d7bf",
+    "secret_scope": "adls-scope",
+    "secret_key": "client-secret"
+  },
+  "oauth_config":
+  {
+    "auth_type": "OAuth",
+    "provider_type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
+    "endpoint_template": "https://login.microsoftonline.com/{tenant_id}/oauth2/token",
+    "spark_properties":
+    {
+      "fs.azure.account.auth.type.{base}": "{auth_type}",
+      "fs.azure.account.oauth.provider.type.{base}": "{provider_type}",
+      "fs.azure.account.oauth2.client.id.{base}": "{client_id}",
+      "fs.azure.account.oauth2.client.secret.{base}": "{client_secret}",
+      "fs.azure.account.oauth2.client.endpoint.{base}": "{endpoint}"
+    }
+  },
+  "file_paths":
+  {
+    "json": "ainput1/EXP-TRAINS.json"
+  },
+  "medallion_paths":
+  {
+    "bronze": "medallion/bronze/exp_trains",
+    "quarantine": "medallion/bronze/exp_trains_quarantine",
+    "silver": "medallion/silver/exp_trains",
+    "gold_route_summary": "medallion/gold/train_route_summary",
+    "gold_station_frequency": "medallion/gold/train_station_frequency",
+    "gold_running_days": "medallion/gold/train_running_days"
+  },
+  "output":
+  {
+    "path": "output/exp_trains",
+    "format": "delta",
+    "mode": "overwrite"
+  }
+}
